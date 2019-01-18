@@ -1,0 +1,16 @@
+#The purpose of this assignment was to define assignment2 and myMean
+#Originally, the myMean() did not output as desired. I was tasked with testing the function in order to find ways to fix it.
+
+> assignment2 <- c(16, 18, 14, 22, 27, 17, 19, 17, 17, 22, 20, 22)
+> myMean <- function(assignment2) { return(sum(assignment)/length(someData)) }
+> myMean()
+Error in myMean() : object 'assignment' not found
+> myMean <- function(assignment2) { return(sum(assignment2)/length(someData)) }
+> myMean()
+Error in myMean() : argument "assignment2" is missing, with no default
+> myMean <- function(x) { return(sum(assignment2)/length(someData)) }
+> myMean()
+Error in myMean() : object 'someData' not found
+> someData <- c(1:12)
+> myMean()
+[1] 19.25
