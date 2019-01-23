@@ -13,4 +13,4 @@ Error in myMean() : argument "assignment2" is missing, with no default      #the
 Error in myMean() : object 'someData' not found         #the object 'someData' was not defined
 > someData <- c(1:12)       #defined someData as the length of 'assignment2'
 > myMean()
-[1] 19.25         #success!
+[1] 19.25         #success!!
