@@ -1,4 +1,4 @@
-#IMPORTANT NOTE: In the example below, the election results used are fictitious. 
+### IMPORTANT NOTE: In the example below, the election results used are fictitious. 
 
 > Name <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Bernie")  #List of candidate names
 > ABC.results <- c(4,62,51,21,2,14,15)       #Results from ABC Poll
