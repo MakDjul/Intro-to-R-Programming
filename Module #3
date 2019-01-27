@@ -41,4 +41,31 @@ ABC.results NBC.results   #Successful result with means!
  Hillary:1   Mean   :24.14   Mean   :27.14  
  Jeb    :1   3rd Qu.:36.00   3rd Qu.:32.00  
  Marco  :1   Max.   :62.00   Max.   :75.00  
- Ted    :1                                  
+ Ted    :1 
+ 
+### The code after this point is another way to accomplish the task of finding the means of the poll results
+> results.df   #data frame is defined above
+     Name ABC.results NBC.results
+1     Jeb           4          12
+2  Donald          62          75
+3     Ted          51          43
+4   Marco          21          19
+5   Carly           2           1
+6 Hillary          14          21
+7  Bernie          15          19
+> r <- rowMeans(results.df[,2:3])    #calculate averages of 2nd and 3rd column
+> r
+[1]  8.0 68.5 47.0 20.0  1.5 17.5 17.0 
+> Averages <- r   #rename r to Averages to increase effieciency of object tracking
+> r.df <- data.frame(Name,Averages)  #create data frame with averages
+> r.df 
+     Name Averages
+1     Jeb      8.0
+2  Donald     68.5
+3     Ted     47.0
+4   Marco     20.0
+5   Carly      1.5
+6 Hillary     17.5
+7  Bernie     17.0
+> mean(as.matrix(results.df[,2:3]))   #final way of calculating average..this time calculating global average (both polls)
+[1] 25.64286
