@@ -11,9 +11,6 @@
 [5,] "Carly"   "2"         "1"        
 [6,] "Hillary" "14"        "21"       
 [7,] "Bernie"  "15"        "19"       
-> results.df <- data.class(Name,ABC.results,NBC.results)
-Error in data.class(Name, ABC.results, NBC.results) : 
-  unused arguments (ABC.results, NBC.results)
 > results.df <- data.frame(Name,ABC.results,NBC.results)
 > results.df
      Name ABC.results NBC.results
