@@ -16,4 +16,4 @@
 > hist(Frequency, main = "Frequency vs Patient Frequency Histogram")  #Frequency vs Patient Frequency measure
 > hist(First, main = "Histogram of 1st Rating from Doctor; 0 = bad, 1 = good")  #Frequency of results from 1st assessment
 > hist(Second, main = "Histogram of 2nd Rating from Doctor; 0 = bad, 1 = good")  #Frequency of results from 2nd assessment
-> hist(FinalDecision, main = "Histogram of Final Rating from Doctor; 0 = bad, 1 = good")
+> hist(FinalDecision, main = "Histogram of Final Rating from Doctor; 0 = bad, 1 = good")   #Frequency of results from final assessment
