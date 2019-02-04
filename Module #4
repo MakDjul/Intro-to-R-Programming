@@ -12,9 +12,27 @@
 > boxplot(Frequency, main = "Frequency of Patient Visits", horizontal = TRUE)  #generate boxplot of Frequency of Patient Visit
 > boxplot(BP, Frequency, horizontal = TRUE, main = "BP during & Frequency of Patients")  #generate side-by-side boxplot..not ideal
 
+#other boxplot construction
+> collected.quant.data <- cbind(BP, Frequency)
+> collected.quant.data <- as.data.frame(collected.quant.data)
+> boxplot(collected.quant.data)  ##generate side-by-side boxplot..much more ideal then above, this plotted succesfully
+
 #Create histogram plots for relevent defined objects
 > hist(BP, main = "Patient Frequency of Visit vs BP")  #Frequency vs BP Histogram
 > hist(Frequency, main = "Frequency vs Patient Frequency Histogram")  #Frequency vs Patient Frequency measure
 > hist(First, main = "Histogram of 1st Rating from Doctor; 0 = bad, 1 = good")  #Frequency of results from 1st assessment
 > hist(Second, main = "Histogram of 2nd Rating from Doctor; 0 = bad, 1 = good")  #Frequency of results from 2nd assessment
 > hist(FinalDecision, main = "Histogram of Final Rating from Doctor; 0 = bad, 1 = good")   #Frequency of results from final assessment
+
+#Alternative generations of the histograms
+> collected.quant.data <- cbind(BP, Frequency)
+> collected.quant.data <- as.data.frame(collected.quant.data)
+> boxplot(collected.quant.data)
+> hist(collected.quant.data$Frequency)
+> hist(collected.quant.data$BP)
+
+> collected.quant.1.0 <- cbind(First,Second,FinalDecision)
+> collected.quant.1.0 <- as.data.frame(collected.quant.1.0)
+> hist(collected.quant.1.0$First)
+> hist(collected.quant.1.0$Second)
+> hist(collected.quant.1.0$FinalDecision)
