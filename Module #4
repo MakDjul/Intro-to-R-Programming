@@ -1,0 +1,19 @@
+#The following ficticious data was sourced from my assignment instructions.
+
+> Frequency <- c(0.6,0.3,0.4,0.4,0.2,0.6,0.3,0.4,0.9,0.2)  #define objects of interest
+> BP <- c(103,87,32,42,59,109,78,205,135,176)
+> First <- c(1,1,1,1,0,0,0,0,NA,1)
+> Second <- c(0,0,1,1,0,0,1,1,1,1)
+> FinalDecision <- c(0,1,0,1,0,1,0,1,1,1)
+
+#Create box plots for objects containing elements with continuous varaibles
+> boxplot(BP, main = "BP of Patients", horizontal = TRUE)  #generate boxplot of BP
+> boxplot(Frequency, main = "Frequency of Patient Visits", horizontal = TRUE)  #generate boxplot of Frequency of Patient Visit
+> boxplot(BP, Frequency, horizontal = TRUE, main = "BP during & Frequency of Patients")  #generate side-by-side boxplot..not ideal
+
+#Create histogram plots for relevent defined objects
+> hist(BP, main = "Patient Frequency of Visit vs BP")  #Frequency vs BP Histogram
+> hist(Frequency, main = "Frequency vs Patient Frequency Histogram")  #Frequency vs Patient Frequency measure
+> hist(First, main = "Histogram of 1st Rating from Doctor; 0 = bad, 1 = good")  #Frequency of results from 1st assessment
+> hist(Second, main = "Histogram of 2nd Rating from Doctor; 0 = bad, 1 = good")  #Frequency of results from 2nd assessment
+> hist(FinalDecision, main = "Histogram of Final Rating from Doctor; 0 = bad, 1 = good")
