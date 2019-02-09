@@ -1,0 +1,24 @@
+#This module was focused on matrices and functions associated with calculating determinants and inverse matrices.
+
+#Create the matrices
+> A <- matrix(1:100, nrow=10) 
+> B <- matrix(1:1000, nrow=10)
+
+#Matrix A Functions - solving for determinants and inverse matrix
+> detA <- det(A)   #Solve for derminant of A
+> deta
+[1] 0    #The determinant of A is 0
+> invA <- solve(A)   #Solve for inverse of A
+Error in solve.default(A) : 
+  Lapack routine dgesv: system is exactly singular: U[6,6] = 0
+#When solving for the inverse of A, there is an error output. This happens because the determinant of A is O.
+
+#Matrix B Functions - solving for determinants and inverse matrix
+> detB <- det(B)   #Solve for determinant of B
+Error in determinant.matrix(x, logarithm = TRUE, ...) : 
+  'x' must be a square matrix
+#When solving for the determinant of B, there is an error output. This happens because B is not a square matrix.
+> invB <- solve(B)
+Error in solve.default(B) : 'a' (10 x 100) must be square
+#When solving for the inverse of B, there is an error output. This happens because, like with the determinant function, B must be a square matrix.
+
