@@ -1,0 +1,43 @@
+#This module is focused on the broad OOPs used in R (S3 vs. S4)
+#To test the type of object, the otype() function is needed
+#Install and load pryr, it allows for the use of optype()
+> install.packages("pryr")
+> library(pryr)
+
+#Choose Data Set, I selected 'CO2' database that is pre built into R.
+#Print data; augmented here to save space
+#CO2 datavase contains information about the 'Carbon Dioxide Uptake in Grass Plants.'
+> CO2 
+   Plant        Type  Treatment conc uptake
+1    Qn1      Quebec nonchilled   95   16.0
+2    Qn1      Quebec nonchilled  175   30.4
+3    Qn1      Quebec nonchilled  250   34.8
+4    Qn1      Quebec nonchilled  350   37.2
+...
+81   Mc3 Mississippi    chilled  350   17.9
+82   Mc3 Mississippi    chilled  500   17.9
+83   Mc3 Mississippi    chilled  675   18.9
+84   Mc3 Mississippi    chilled 1000   19.9
+
+#Test if generic functions will work on the dataset of interest
+> summary(CO2)
+     Plant             Type         Treatment 
+ Qn1    : 7   Quebec     :42   nonchilled:42  
+ Qn2    : 7   Mississippi:42   chilled   :42  
+ Qn3    : 7                                   
+ Qc1    : 7                                   
+ Qc3    : 7                                   
+ Qc2    : 7                                   
+ (Other):42                                   
+      conc          uptake     
+ Min.   :  95   Min.   : 7.70  
+ 1st Qu.: 175   1st Qu.:17.90  
+ Median : 350   Median :28.30  
+ Mean   : 435   Mean   :27.21  
+ 3rd Qu.: 675   3rd Qu.:37.12  
+ Max.   :1000   Max.   :45.50  
+ 
+ #Determine the object type; optype() was loaded via the 'pryr' packaeg
+ > otype(CO2)
+[1] "S3"
+ 
