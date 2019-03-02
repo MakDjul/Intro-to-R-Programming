@@ -1,0 +1,21 @@
+#Install & Load 'plyr' into RStudio Console
+> install.packages("plyr")
+> library(plyr)
+
+#Import data set to R, this command leads to point and click interface to choose the file of interest
+> x <- read.table(file.choose(),header=TRUE,sep=",")
+
+#Generate dataframe that adds two new columns (avg. age & avg. grade) into the imported data, split calculations by gender
+> StudentMeans <- ddply(x, "Sex", transform, Age.average=mean(Age), Grade.average=mean(Grade))
+
+#Print dataframe results into a new table; result of this function are found under 'files' on RStudio
+> write.table(StudentMeans,"Sorted_Average")
+
+#Generate CSV file from newly generated table
+> write.table(StudentMeans,"Sorted_Average", sep = ",")
+
+#Filter and select names that contain an i (captial and lower-case)
+> iI_names <- subset(x,grepl("[iI]",x$Name))
+
+#Generate new table containing subset of previously filtered data
+> write.table(iI_names, "DataSubset", sep = ",")
