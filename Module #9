@@ -1,0 +1,6 @@
+#This assignment is focused on Visualization in R
+#The three types of visualization include: basic, lattice and ggplot
+
+#Access file of interest; downloaded from https://vincentarelbundock.github.io/Rdatasets/datasets.html
+mydata <- read.table("/Users/Mak_Djulbegovic/Desktop/remission.csv", header=TRUE, sep=",")
+
