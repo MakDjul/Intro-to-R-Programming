@@ -1,0 +1,14 @@
+Package: ALDH2markers
+Title: Assess the association between ALDH2 allele frequencies and alcholism
+Version: 0.0.9000
+Authors@R: person("Mak", "Djulbegovic", email = "makdjulbegovic@gmail.com", role = c("aut", "cre"))
+Description: The data set contains eight ALDH2 markers for Japanese alcohlic patients and controls.
+    The package will analyze the two varients for the eight marker loci of interest. The aim is to 
+    uncover the function of these alleles as a predictor for Alcoholism. Data visualization tools
+    will be used to aid in assessment of possible associations between the gene varients and alcoholism.
+    Graphing the data allow for clear presentation, allowing for reliable conclusions to be made regarding 
+    the associations between ALDH2 markers and alcholism in Japanese patients.
+Depends: R(>= 3.5.2), gap, ggplot2, qtl
+License: CCO
+Encoding: UTF-8
+LazyData: true
