@@ -1,0 +1,41 @@
+#The task of this week's module was to decode code that contains a deliberate bug
+#Original code:
+> tukey_multiple <- function(x) { 
++   outliers <- array(TRUE,dim=dim(x)) 
++   for (j in 1:ncol(x)) 
++   { 
++   outliers[,j] <- outliers[,j] && tukey.outlier(x[,j]) 
++   } 
++ outlier.vec <- vector(length=nrow(x)) 
++   for (i in 1:nrow(x)) 
++   { outlier.vec[i] <- all(outliers[i,]) } return(outlier.vec) }
+
+#Error Generated
+Error: unexpected symbol in:
+"    for (i in 1:nrow(x)) 
+    { outlier.vec[i] <- all(outliers[i,]) } return"
+    
+#Debugged code -- hard enter in last line of the function to rid of "unexpected symbol"
+> tukey_multiple <- function(x) { 
++     outliers <- array(TRUE,dim=dim(x)) 
++     for (j in 1:ncol(x)) 
++     { 
++         outliers[,j] <- outliers[,j] && tukey.outlier(x[,j]) 
++     } 
++     
++     outlier.vec <- vector(length=nrow(x)) 
++     for (i in 1:nrow(x)) 
++     {
++         outlier.vec[i] <- all(outliers[i,])
++     } 
++     
++     return(outlier.vec) }
+
+########Test debugged code
+#Generate array for the generated function
+> try.matrix <- matrix(rexp(200, rate=.1), ncol=20)
+> try.array <- as.array(try.matrix)
+> tukey_multiple(try.array)
+
+#New error generated -- function in function is not defined
+Error in tukey.outlier(x[, j]) : could not find function "tukey.outlier"
