@@ -1,0 +1,37 @@
+---
+title: 'Module #12 Rmd Practice'
+author: "Mak Djulbegovic"
+date: "3/30/2019"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Markdown Practice Using Data Sets Available in R
+
+This is my **first** experience with R Markdown. I decided to use the **DNase** dataset for this small project. Here, I decided to use various bits of code associated with this process. Note, The **DNase** data frame has _176_ rows and _3_ columns of data obtained during development of an __ELISA__ assay for the recombinant protein DNase in rat serum.
+
+####Summary data of DNase data generated in R
+
+The table below presents descriptive statistics associated with the DNase dataset.
+
+```{r DNase}
+summary(DNase)
+```
+
+Of course, this is just one of many data sets available in R.
+
+If a user is interested, they are able to chose from one of the many datasets detailed [here](https://stat.ethz.ch/R-manual/R-patched/library/datasets/html/00Index.html).
+
+####Plot generation of DNase data
+
+As with all datasets, the user can implore the data visualization packages like ggpolot or lattice. 
+
+```{r}
+library(ggplot2)
+generate_plot <- ggplot(DNase, aes(x=conc, y=density))
+label_plot <- generate_plot + ggtitle("Density vs Concentration of ELISA experimental runs") + xlab("Density per run") + ylab("Concentration per run")
+label_plot + geom_line(linetype=1)
+```
