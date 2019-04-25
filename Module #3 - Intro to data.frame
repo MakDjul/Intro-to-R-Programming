@@ -1,9 +1,16 @@
 ### IMPORTANT NOTE: In the example below, the election results used are fictitious. 
 
-> Name <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Bernie")  #List of candidate names
-> ABC.results <- c(4,62,51,21,2,14,15)       #Results from ABC Poll
-> NBC.results <- c(12,75,43,19,1,21,19)      #Results from NBC Poll
-> results <- cbind(Name,ABC.results,NBC.results)  #Create a matrix with election results
+#List of candidate names
+> Name <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Bernie")  
+
+#Results from ABC Poll
+> ABC.results <- c(4,62,51,21,2,14,15)     
+
+#Results from NBC Poll
+> NBC.results <- c(12,75,43,19,1,21,19)     
+
+#Create a matrix with election results
+> results <- cbind(Name,ABC.results,NBC.results)  
 > results
      Name      ABC.results NBC.results
 [1,] "Jeb"     "4"         "12"       
@@ -13,7 +20,9 @@
 [5,] "Carly"   "2"         "1"        
 [6,] "Hillary" "14"        "21"       
 [7,] "Bernie"  "15"        "19"       
-> results.df <- data.frame(Name,ABC.results,NBC.results)  #Create data frame instead of a matrix
+
+#Create data frame instead of a matrix
+> results.df <- data.frame(Name,ABC.results,NBC.results) 
 > results.df
      Name ABC.results NBC.results
 1     Jeb           4          12
@@ -23,17 +32,26 @@
 5   Carly           2           1
 6 Hillary          14          21
 7  Bernie          15          19
-> mean(results.df)    #Calculate mean of different polls used...error message arises because of non-numerical variables in the data frame
+
+#Calculate mean of different polls used...error message arises because of non-numerical variables in the data frame
+> mean(results.df)    
 [1] NA
 Warning message:
 In mean.default(results.df) :
   argument is not numeric or logical: returning NA
-> colMeans(results.df)   #Use colMean function on data.frame because editions of R after 3.0.0 require the use of this function
+
+#Use colMean function on data.frame because editions of R after 3.0.0 require the use of this function
+> colMeans(results.df)   
 Error in colMeans(results.df) : 'x' must be numeric
-> colMeans(results.df[,2:3], na.rm = TRUE)   #Select 2nd and 3rd column to apply colMeans 
-ABC.results NBC.results   #Successful result with means!
+
+#Select 2nd and 3rd column to apply colMeans 
+#Successful result with means!
+> colMeans(results.df[,2:3], na.rm = TRUE)  
+ABC.results NBC.results  
    24.14286    27.14286 
-> summary(results.df)   #Apply summary function to yield other forms of descriptive statistics beyond the mean
+   
+#Apply summary function to yield other forms of descriptive statistics beyond the mean
+> summary(results.df)   
       Name    ABC.results     NBC.results   
  Bernie :1   Min.   : 2.00   Min.   : 1.00  
  Carly  :1   1st Qu.: 9.00   1st Qu.:15.50  
@@ -44,7 +62,8 @@ ABC.results NBC.results   #Successful result with means!
  Ted    :1 
  
 ### The code after this point is another way to accomplish the task of finding the means of the poll results
-> results.df   #data frame is defined above
+#data frame as defined above
+> results.df   
      Name ABC.results NBC.results
 1     Jeb           4          12
 2  Donald          62          75
@@ -53,11 +72,17 @@ ABC.results NBC.results   #Successful result with means!
 5   Carly           2           1
 6 Hillary          14          21
 7  Bernie          15          19
-> r <- rowMeans(results.df[,2:3])    #calculate averages of 2nd and 3rd column
+
+ #calculate averages of 2nd and 3rd column
+> r <- rowMeans(results.df[,2:3])    
 > r
 [1]  8.0 68.5 47.0 20.0  1.5 17.5 17.0 
-> Averages <- r   #rename r to Averages to increase effieciency of object tracking
-> r.df <- data.frame(Name,Averages)  #create data frame with averages
+
+#rename r to Averages to increase effieciency of object tracking
+> Averages <- r   
+
+#create data frame with averages
+> r.df <- data.frame(Name,Averages)  
 > r.df 
      Name Averages
 1     Jeb      8.0
@@ -67,5 +92,7 @@ ABC.results NBC.results   #Successful result with means!
 5   Carly      1.5
 6 Hillary     17.5
 7  Bernie     17.0
-> mean(as.matrix(results.df[,2:3]))   #final way of calculating average..this time calculating global average (both polls)
+
+#final way of calculating average..this time calculating global average (both polls)
+> mean(as.matrix(results.df[,2:3]))   
 [1] 25.64286
