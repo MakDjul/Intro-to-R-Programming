@@ -3,14 +3,28 @@
 
 > assignment2 <- c(16, 18, 14, 22, 27, 17, 19, 17, 17, 22, 20, 22)
 > myMean <- function(assignment2) { return(sum(assignment)/length(someData)) }
+
+#the object 'assignment' is not properly defined
 > myMean()
-Error in myMean() : object 'assignment' not found         #the object 'assignment' is not properly defined
-> myMean <- function(assignment2) { return(sum(assignment2)/length(someData)) }       #renamed 'assignment' to 'assignment2'
+Error in myMean() : object 'assignment' not found        
+
+#renamed 'assignment' to 'assignment2'
+> myMean <- function(assignment2) { return(sum(assignment2)/length(someData)) }    
+
+#the function requires the argument to be 'assignment 2'
 > myMean()
-Error in myMean() : argument "assignment2" is missing, with no default      #the function requires the argument to be 'assignment 2'
-> myMean <- function(x) { return(sum(assignment2)/length(someData)) }       #replaced 'assignment2' with 'x' as argument for increase ease of calling the function
+Error in myMean() : argument "assignment2" is missing, with no default   
+
+#replaced 'assignment2' with 'x' as argument for increase ease of calling the function
+> myMean <- function(x) { return(sum(assignment2)/length(someData)) }       
+
+#the object 'someData' was not defined
 > myMean()
-Error in myMean() : object 'someData' not found         #the object 'someData' was not defined
-> someData <- c(1:12)       #defined someData as the length of 'assignment2'
+Error in myMean() : object 'someData' not found         
+
+#defined someData as the length of 'assignment2'
+> someData <- c(1:12)      
+
+#success!!
 > myMean()
-[1] 19.25         #success!!
+[1] 19.25         
